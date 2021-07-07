@@ -26,9 +26,9 @@ const CreateNewCV = () => (
         </Breadcrumb>
         <div style={{ background: "#fff", padding: 24, minHeight: 380 }}>
           <Row gutter={16}>
-            <Col className="gutter-row" span={24}>
+            <Col span={24}>
               <Form layout="vertical">
-                <Col className="gutter-row" span={24}>
+                <Col span={24}>
                   <h2 className="heading-secondary">Projects</h2>
                 </Col>
               </Form>

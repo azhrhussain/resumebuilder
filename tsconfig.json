@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "noImplicitAny": false,
     "allowJs": true,
     "skipLibCheck": true,
@@ -22,7 +18,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src/**/*.ts", 
-    "src/**/*.tsx"
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/modules/UserForm/userImage.tsx",
+    "src/modules/UserForm/index.jsx"
   ]
 }

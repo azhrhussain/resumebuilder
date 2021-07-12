@@ -1,10 +1,18 @@
 import React from "react";
-import { Form, Input, Button } from "antd";
-import { FULL_NAME, FULL_NAME_ERROR_MESSAGE, JOB_TITLE } from "./constants";
+import { Form, Input, Button, Col } from "antd";
+import Avatar from "./userImage";
+import {
+  FULL_NAME,
+  FULL_NAME_ERROR_MESSAGE,
+  JOB_TITLE,
+  NEXT,
+  UPLOAD_IMAGE,
+  UPLOAD_IMAGE_ERROR,
+} from "./constants";
 
-const UserForm = () => (
+const UserFormStep1 = () => (
   <Form
-    name="basic"
+    // name="basic"
     labelCol={{ span: 8 }}
     wrapperCol={{ span: 16 }}
     initialValues={{ remember: true }}
@@ -18,18 +26,22 @@ const UserForm = () => (
     >
       <Input />
     </Form.Item>
-
+    <Form.Item
+      label={UPLOAD_IMAGE}
+      name={UPLOAD_IMAGE}
+      rules={[{ required: false, message: UPLOAD_IMAGE_ERROR }]}
+    >
+      <Avatar />
+    </Form.Item>
     <Form.Item
       label={JOB_TITLE}
       name={JOB_TITLE}
-      rules={[{ required: true, message: "Please input your password!" }]}
+      rules={[{ required: false, message: "Please input your job title!" }]}
     >
-      <Input.Password />
+      <Input />
     </Form.Item>
     <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
+      <Button type="primary">{NEXT}</Button>
     </Form.Item>
   </Form>
 );
@@ -42,4 +54,4 @@ const onFinishFailed = (errorInfo: any) => {
   console.log("Failed:", errorInfo);
 };
 
-export default UserForm;
+export default UserFormStep1;

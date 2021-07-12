@@ -1,6 +1,7 @@
 import React from "react";
 import { Upload, message } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+const css = require("./userImage.css");
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -70,7 +71,4 @@ class Avatar extends React.Component {
   }
 }
 
-// .avatar-uploader > .ant-upload {
-//   width: 128px;
-//   height: 128px;
-// }
+export default Avatar;

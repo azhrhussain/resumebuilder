@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Breadcrumb, Row, Col, Form } from "antd";
 import { Link } from "react-router-dom";
-import UserForm from "../UserForm/index";
+import UserForm from "../../components/Forms/UserForm/index";
 // import ProfileCP from 'components/forms/profileInfo/Index';
 // import ExperienceCP from 'components/forms/experience/Experience';
 // import ProjectCP from 'components/forms/Project';

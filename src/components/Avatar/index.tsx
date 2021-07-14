@@ -1,7 +1,7 @@
 import React from "react";
-import { Upload, message } from "antd";
+import styled from "styled-components";
+import { Upload, message, Button } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-const css = require("./userImage.css");
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -18,8 +18,13 @@ function beforeUpload(file) {
   if (!isLt2M) {
     message.error("Image must smaller than 2MB!");
   }
-  return isJpgOrPng && isLt2M;
+  return isJpgOrPng;
 }
+
+const StyledUpload = styled(Upload)`
+  width: 128px;
+  height: 128px;
+`;
 
 class Avatar extends React.Component {
   state = {
@@ -52,21 +57,23 @@ class Avatar extends React.Component {
       </div>
     );
     return (
-      <Upload
-        name="avatar"
-        listType="picture-card"
-        className="avatar-uploader"
-        showUploadList={false}
-        action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-        beforeUpload={beforeUpload}
-        onChange={this.handleChange}
-      >
-        {imageUrl ? (
-          <img src={imageUrl} alt="avatar" style={{ width: "100%" }} />
-        ) : (
-          uploadButton
-        )}
-      </Upload>
+      <>
+        <StyledUpload
+          name="avatar"
+          listType="picture-card"
+          className="avatar-uploader"
+          showUploadList={false}
+          action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+          beforeUpload={beforeUpload}
+          onChange={this.handleChange}
+        >
+          {imageUrl ? (
+            <img src={imageUrl} alt="avatar" style={{ width: "100%" }} />
+          ) : (
+            uploadButton
+          )}
+        </StyledUpload>
+      </>
     );
   }
 }

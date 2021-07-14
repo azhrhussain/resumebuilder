@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout, Breadcrumb, Row, Col, Form } from "antd";
 import { Link } from "react-router-dom";
+import UserForm from "../../components/Forms/UserForm/index";
 // import ProfileCP from 'components/forms/profileInfo/Index';
 // import ExperienceCP from 'components/forms/experience/Experience';
 // import ProjectCP from 'components/forms/Project';
@@ -30,6 +31,9 @@ const CreateNewCV = () => (
               <Form layout="vertical">
                 <Col span={24}>
                   <h2 className="heading-secondary">Projects</h2>
+                </Col>
+                <Col>
+                  <UserForm></UserForm>
                 </Col>
               </Form>
             </Col>

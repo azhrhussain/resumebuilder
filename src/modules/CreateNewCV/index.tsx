@@ -1,8 +1,21 @@
 import React from 'react';
-import { Layout, Breadcrumb, Row, Col, Form, Input, Select } from 'antd';
-import CustomForm from '../../elements/Forms/UserFormStyle';
+import {
+  Layout,
+  Breadcrumb,
+  Row,
+  Col,
+  Form,
+  Input,
+  Select,
+  Divider,
+} from 'antd';
+import CustomTitle from '../../elements/Forms/UserFormStyle';
 import { Link } from 'react-router-dom';
 import ContactForm from '../../elements/Forms/ContactForm';
+import EmploymentDetails from '../../elements/Forms/EmploymentDetails';
+import Projects from '../../elements/Forms/Projects';
+import Education from '../../elements/Forms/Education';
+import Certification from '../../elements/Forms/Certification';
 // import ProfileCP from 'components/forms/profileInfo/Index';
 // import ExperienceCP from 'components/forms/experience/Experience';
 // import ProjectCP from 'components/forms/Project';
@@ -31,7 +44,12 @@ const CreateNewCV = () => (
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
           <Row gutter={16}>
             <Col span={24}>
-              <Col span={24}>
+              <Col span={12}>
+                <Divider>
+                  <h1 style={{ textAlign: 'center', padding: '1rem' }}>
+                    Personal Details
+                  </h1>
+                </Divider>
                 <Form
                   name="register"
                   initialValues={{
@@ -41,39 +59,38 @@ const CreateNewCV = () => (
                   scrollToFirstError
                 >
                   {/* profile */}
-                  <CustomForm>Profile</CustomForm>
-                  <TextArea
-                    placeholder="Your profile here"
-                    autoSize={{ minRows: 2, maxRows: 6 }}
-                  />
+
                   {/* contact */}
                   <ContactForm></ContactForm>
-                  {/* address */}
-                  <CustomForm>Address:</CustomForm>
-                  <Row gutter={[16, 16]}>
-                    <Col span={8}>
-                      <Input placeholder="City" />
-                    </Col>
-                    <Col span={8}>
-                      <Input placeholder="Province/State" />
-                    </Col>
-                    <Col span={8}>
-                      <Input placeholder="Country" />
-                    </Col>
-                  </Row>
-                  {/* social networks */}
-                  <CustomForm>Social networks:</CustomForm>
-                  <Row gutter={[16, 16]}>
-                    <Col span={8}>
-                      <Input placeholder="LinkedIn" />
-                    </Col>
-                    <Col span={8}>
-                      <Input placeholder="Stackoverflow" />
-                    </Col>
-                    <Col span={8}>
-                      <Input placeholder="Other" />
-                    </Col>
-                  </Row>
+                </Form>
+                <Form>
+                  {/* employment */}
+                  <Divider>
+                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
+                      Employment History
+                    </h1>
+                  </Divider>
+                  <EmploymentDetails></EmploymentDetails>
+                  {/* projects */}
+                  <Divider>
+                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
+                      Projects
+                    </h1>
+                  </Divider>
+                  <Projects></Projects>
+                  {/* education */}
+                  <Divider>
+                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
+                      Education
+                    </h1>
+                  </Divider>
+                  <Education></Education>
+                  <Divider>
+                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
+                      Certification
+                    </h1>
+                  </Divider>
+                  <Certification></Certification>
                 </Form>
               </Col>
             </Col>

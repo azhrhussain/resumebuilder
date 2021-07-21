@@ -8,8 +8,10 @@ import {
   Input,
   Select,
   Divider,
+  Upload,
+  message,
 } from 'antd';
-import CustomTitle from '../../elements/Forms/UserFormStyle';
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import ContactForm from '../../elements/Forms/ContactForm';
 import EmploymentDetails from '../../elements/Forms/EmploymentDetails';
@@ -42,14 +44,15 @@ const CreateNewCV = () => (
           <Breadcrumb.Item>CreateNew</Breadcrumb.Item>
         </Breadcrumb>
         <div style={{ background: '#fff', padding: 24, minHeight: 380 }}>
-          <Row gutter={16}>
-            <Col span={24}>
-              <Col span={12}>
-                <Divider>
-                  <h1 style={{ textAlign: 'center', padding: '1rem' }}>
-                    Personal Details
-                  </h1>
-                </Divider>
+          <Row gutter={[8, 48]}>
+            <Col
+              xl={{ span: 24, offset: 0 }}
+              lg={{ span: 24, offset: 0 }}
+              md={{ span: 20, offset: 2 }}
+              sm={{ span: 22, offset: 1 }}
+              xs={{ span: 22, offset: 1 }}
+            >
+              <Col lg={{ span: 12 }}>
                 <Form
                   name="register"
                   initialValues={{
@@ -65,32 +68,16 @@ const CreateNewCV = () => (
                 </Form>
                 <Form>
                   {/* employment */}
-                  <Divider>
-                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
-                      Employment History
-                    </h1>
-                  </Divider>
+                  <Divider style={{ background: '#0050b3' }}></Divider>
                   <EmploymentDetails></EmploymentDetails>
                   {/* projects */}
-                  <Divider>
-                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
-                      Projects
-                    </h1>
-                  </Divider>
+                  <Divider style={{ background: '#0050b3' }}></Divider>
                   <Projects></Projects>
                   {/* education */}
-                  <Divider>
-                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
-                      Education
-                    </h1>
-                  </Divider>
+                  <Divider style={{ background: '#0050b3' }}></Divider>
                   <Education></Education>
-                  <Divider>
-                    <h1 style={{ textAlign: 'center', padding: '1rem' }}>
-                      Certification
-                    </h1>
-                  </Divider>
-                  <Certification></Certification>
+                  <Divider style={{ background: '#0050b3' }}></Divider>
+                  <Certification />
                 </Form>
               </Col>
             </Col>

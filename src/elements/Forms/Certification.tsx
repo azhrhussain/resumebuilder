@@ -1,28 +1,46 @@
 import React from 'react';
 import { Form, Input, Row, Col, DatePicker, Space, Card } from 'antd';
-import CustomTitle from '../../elements/Forms/UserFormStyle';
+import CustomTitle from '../components/UserFormStyle';
+import StyledCard from '../components/CardStyle';
 
 const { RangePicker } = DatePicker;
 
 const Certification = () => (
   <div>
     {/* courses */}
-    <Card>
-      <CustomTitle>Certification</CustomTitle>
-      <Row gutter={[24, 40]}>
-        <Col span={12}>
+    <StyledCard title="Certification">
+      <Row gutter={[16, 16]}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Course Name" />
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Institution" />
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Space direction="horizontal">
             <RangePicker />
           </Space>
         </Col>
       </Row>
-    </Card>
+    </StyledCard>
   </div>
 );
 

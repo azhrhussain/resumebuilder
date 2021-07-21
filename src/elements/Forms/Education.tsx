@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Input, Row, Col, DatePicker, Space, Checkbox, Card } from 'antd';
-import CustomTitle from '../../elements/Forms/UserFormStyle';
+import CustomTitle from '../components/UserFormStyle';
+import StyledCard from '../components/CardStyle';
 
 const { TextArea } = Input;
 const { RangePicker } = DatePicker;
@@ -10,20 +11,44 @@ function onChange(checkedValues) {
 
 const Education = () => (
   <div>
-    <Card>
+    <StyledCard title="Education">
       {/* emloyment history */}
       <CustomTitle>School program</CustomTitle>
-      <Row gutter={[24, 40]}>
-        <Col span={12}>
+      <Row gutter={[16, 16]}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="School/University" />
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Degree" />
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Field of study" />
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Space direction="horizontal">
             <RangePicker picker="year" />
           </Space>
@@ -33,19 +58,19 @@ const Education = () => (
       <CustomTitle>Grade</CustomTitle>
       <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
         <Row>
-          <Col span={4} offset={2}>
+          <Col span={8}>
             <Checkbox value="A">A</Checkbox>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Checkbox value="B">B</Checkbox>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Checkbox value="C">C</Checkbox>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Checkbox value="D">D</Checkbox>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Checkbox value="E">E</Checkbox>
           </Col>
         </Row>
@@ -61,7 +86,7 @@ const Education = () => (
         placeholder="Describe your activities"
         autoSize={{ minRows: 6, maxRows: 6 }}
       />
-    </Card>
+    </StyledCard>
   </div>
 );
 

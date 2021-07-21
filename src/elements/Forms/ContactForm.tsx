@@ -1,23 +1,29 @@
 import React from 'react';
 import { Form, Input, Row, Col, Card } from 'antd';
-import CustomTitle from '../../elements/Forms/UserFormStyle';
+import CustomTitle from '../components/UserFormStyle';
+import StyledCard from '../components/CardStyle';
 
 const { TextArea } = Input;
 
 const ContactForm = () => (
   <div>
-    <Card>
+    <StyledCard title="Personal Details">
       <CustomTitle>Professional Summary</CustomTitle>
       <TextArea
         placeholder="Describe your profession in a couple of sentences"
-        autoSize={{ minRows: 2, maxRows: 6 }}
+        autoSize={{ minRows: 4, maxRows: 6 }}
       />
       <CustomTitle>Contact:</CustomTitle>
-      <Row gutter={[16, 16]}>
-        <Col span={12}>
+      <Row gutter={[16, 0]}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Form.Item
             name="email"
-            label="E-mail"
             rules={[
               {
                 type: 'email',
@@ -29,13 +35,18 @@ const ContactForm = () => (
               },
             ]}
           >
-            <Input />
+            <Input placeholder="E-mail" />
           </Form.Item>
         </Col>
-        <Col span={12}>
+        <Col
+          xl={{ span: 12 }}
+          lg={{ span: 12 }}
+          md={{ span: 12 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Form.Item
             name="phone"
-            label="Phone Number"
             rules={[
               {
                 required: true,
@@ -43,37 +54,73 @@ const ContactForm = () => (
               },
             ]}
           >
-            <Input style={{ width: '100%' }} />
+            <Input placeholder="Phone number" />
           </Form.Item>
         </Col>
       </Row>
       {/* address */}
       <CustomTitle>Address:</CustomTitle>
       <Row gutter={[16, 16]}>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="City" />
         </Col>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Province/State" />
         </Col>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Country" />
         </Col>
       </Row>
       {/* social networks */}
       <CustomTitle>Social networks:</CustomTitle>
       <Row gutter={[16, 16]}>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="LinkedIn" />
         </Col>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Stackoverflow" />
         </Col>
-        <Col span={8}>
+        <Col
+          xl={{ span: 8 }}
+          lg={{ span: 8 }}
+          md={{ span: 8 }}
+          sm={{ span: 24 }}
+          xs={{ span: 24 }}
+        >
           <Input placeholder="Other" />
         </Col>
       </Row>
-    </Card>
+    </StyledCard>
   </div>
 );
 
